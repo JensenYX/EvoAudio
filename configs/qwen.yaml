@@ -1,0 +1,36 @@
+output_dir: runs/qwen
+seed: 17
+model: Qwen/Qwen2.5-Omni-7B
+tts_model: Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice
+whisper_model: openai/whisper-large-v3
+proposer:
+  mode: llm
+  base_url: https://api.deepseek.com/v1
+  model: deepseek-v4-flash
+  api_key_env: DEEPSEEK_API_KEY
+resources:
+  hosts: [localhost]
+  devices: [0, 1, 2, 3, 4, 5, 6, 7]
+  tts_python: .venv-tts/bin/python
+data:
+  speech_per_split: 96
+  music_per_split: 48
+  heldout_size: 2500
+  soundfont: /usr/share/sounds/sf2/TimGM6mb.sf2
+curriculum:
+  candidates: 3000
+  train_size: 1024
+  max_skill_share: 0.06
+  retention: 0.12
+  target_success: 0.5
+  pilot_per_skill: 8
+training:
+  rounds: 13
+  steps: 64
+  save_steps: 32
+  prompts_per_step: 16
+  group_size: 16
+  learning_rate: 0.000001
+  temperature: 0.9
+  beta: 0.02
+  deepspeed: zero2

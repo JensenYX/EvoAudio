@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.25,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evoaudio"
+version = "0.1.0"
+description = "Recursive self-improvement for audio understanding"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "Apache-2.0"
+authors = [{name = "EvoAudio authors"}]
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11,<2",
+  "soundfile>=0.13,<1",
+  "librosa==0.11.0",
+  "pydantic>=2.10,<3",
+  "PyYAML>=6,<7",
+  "httpx>=0.27,<1",
+  "mido>=1.3,<2",
+]
+
+[project.optional-dependencies]
+train = [
+  "ms-swift==4.5.0",
+  "torch==2.9.0",
+  "torchaudio==2.9.0",
+  "torchvision==0.24.0",
+  "transformers==4.57.6",
+  "trl==0.29.1",
+  "datasets==3.6.0",
+  "accelerate==1.13.0",
+  "peft==0.18.1",
+  "deepspeed==0.19.0",
+  "qwen-omni-utils==0.0.9",
+]
+tts = ["qwen-tts==0.1.1", "torch==2.11.0", "torchaudio==2.11.0", "torchvision==0.26.0"]
+eval = ["pyarrow>=18,<25"]
+
+[project.scripts]
+evoaudio = "evoaudio.cli:main"
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2609.27389"
+Homepage = "https://jensenyx.github.io/EvoAudio.github.io/"
+Repository = "https://github.com/JensenYX/EvoAudio"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/evoaudio"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
