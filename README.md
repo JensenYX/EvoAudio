@@ -1,14 +1,43 @@
-# EvoAudio
+<div align="center">
+  <h1>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/evoaudio-wordmark-dark.png">
+      <img src="assets/evoaudio-wordmark.png" alt="EvoAudio" width="300">
+    </picture>
+  </h1>
+  <h3>Recursive Self-Improvement for Audio Understanding</h3>
+  <p>Adaptive curricula · Verifiable audio · Recursive improvement</p>
+  <p>
+    <a href="https://arxiv.org/abs/2609.27389"><img src="assets/badges/paper.svg" alt="arXiv · Paper" height="34"></a>
+    &nbsp;
+    <a href="https://jensenyx.github.io/EvoAudio.github.io/"><img src="assets/badges/demo.svg" alt="Project page · Audio demos" height="34"></a>
+    &nbsp;
+    <a href="LICENSE"><img src="assets/badges/license.svg" alt="License · Apache 2.0" height="34"></a>
+  </p>
+  <p><strong>English</strong> &nbsp;·&nbsp; <a href="README_zh.md">简体中文</a></p>
+  <p>
+    <a href="#installation">Installation</a> &nbsp;·&nbsp;
+    <a href="#quickstart">Quickstart</a> &nbsp;·&nbsp;
+    <a href="#run-self-evolution">Training</a> &nbsp;·&nbsp;
+    <a href="#evaluation">Evaluation</a> &nbsp;·&nbsp;
+    <a href="#paper-results">Results</a> &nbsp;·&nbsp;
+    <a href="#citation">Citation</a>
+  </p>
+</div>
 
-**Recursive Self-Improvement for Audio Understanding**
-
-[中文](README_zh.md) · [Paper](https://arxiv.org/abs/2609.27389) · [Project & Audio Demos](https://jensenyx.github.io/EvoAudio.github.io/)
+---
 
 EvoAudio builds the next training curriculum around the current audio model: it chooses skills to practise, adjusts acoustic difficulty, constructs audio questions with verifiable answers, and updates the model with GRPO. A candidate becomes the next solver when it improves on a fixed held-out set.
 
 This repository provides data generation, curriculum planning, GRPO training, and evaluation for Qwen2.5-Omni-7B.
 
-[![EvoAudio framework](assets/framework.png)](https://jensenyx.github.io/EvoAudio.github.io/#demos)
+<p align="center">
+  <a href="https://jensenyx.github.io/EvoAudio.github.io/#demos">
+    <img src="assets/framework.png" alt="The EvoAudio loop: diagnose and plan, generate and verify, learn and evolve" width="960">
+  </a>
+  <br>
+  <sub>Explore the framework, then <a href="https://jensenyx.github.io/EvoAudio.github.io/#demos">listen to the audio demos</a>.</sub>
+</p>
 
 ## How it works
 

@@ -1,14 +1,43 @@
-# EvoAudio
+<div align="center">
+  <h1>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/evoaudio-wordmark-dark.png">
+      <img src="assets/evoaudio-wordmark.png" alt="EvoAudio" width="300">
+    </picture>
+  </h1>
+  <h3>面向音频理解的递归自我改进</h3>
+  <p>自适应课程 · 可验证音频 · 递归改进</p>
+  <p>
+    <a href="https://arxiv.org/abs/2609.27389"><img src="assets/badges/paper.svg" alt="arXiv · 论文" height="34"></a>
+    &nbsp;
+    <a href="https://jensenyx.github.io/EvoAudio.github.io/"><img src="assets/badges/demo.svg" alt="项目主页 · 音频演示" height="34"></a>
+    &nbsp;
+    <a href="LICENSE"><img src="assets/badges/license.svg" alt="许可证 · Apache 2.0" height="34"></a>
+  </p>
+  <p><a href="README.md">English</a> &nbsp;·&nbsp; <strong>简体中文</strong></p>
+  <p>
+    <a href="#安装">安装</a> &nbsp;·&nbsp;
+    <a href="#快速开始">快速开始</a> &nbsp;·&nbsp;
+    <a href="#运行自演化">训练</a> &nbsp;·&nbsp;
+    <a href="#评测">评测</a> &nbsp;·&nbsp;
+    <a href="#论文结果">结果</a> &nbsp;·&nbsp;
+    <a href="#引用">引用</a>
+  </p>
+</div>
 
-**面向音频理解的递归自我改进**
-
-[English](README.md) · [论文](https://arxiv.org/abs/2609.27389) · [项目与音频演示](https://jensenyx.github.io/EvoAudio.github.io/)
+---
 
 EvoAudio 根据当前模型的能力构建下一轮训练数据：选择需要练习的技能，控制音频难度，通过音频工具生成问题与可验证答案，再用 GRPO 更新模型。候选模型在固定验证集上取得提升后成为下一轮的起点。
 
 本仓库提供 Qwen2.5-Omni-7B 的数据生成、课程规划、GRPO 训练与评测流程。
 
-[![EvoAudio 框架](assets/framework.png)](https://jensenyx.github.io/EvoAudio.github.io/#demos)
+<p align="center">
+  <a href="https://jensenyx.github.io/EvoAudio.github.io/#demos">
+    <img src="assets/framework.png" alt="EvoAudio 闭环：诊断与规划、生成与验证、学习与演化" width="960">
+  </a>
+  <br>
+  <sub>了解方法流程，或直接<a href="https://jensenyx.github.io/EvoAudio.github.io/#demos">试听音频演示</a>。</sub>
+</p>
 
 ## 工作流程
 

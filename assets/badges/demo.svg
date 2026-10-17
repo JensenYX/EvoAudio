@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="34" viewBox="0 0 148 34" role="img" aria-label="Audio demos">
+  <title>Explore the EvoAudio audio demos</title>
+  <rect width="148" height="34" rx="6" fill="#1a7462"/>
+  <g fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+    <path d="M13 14v6m4-11v16m4-19v22m4-17v12m4-9v6"/>
+  </g>
+  <text x="42" y="21.5" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="12">Audio Demos</text>
+</svg>
